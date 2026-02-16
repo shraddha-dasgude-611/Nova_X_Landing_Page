@@ -1,0 +1,1305 @@
+/* =======================================================
+   Global Reset
+   Description: Removes default browser spacing and ensures
+   consistent box model behavior across all elements.
+======================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =======================================================
+   Smooth Scrolling
+   Enables smooth animated scrolling for anchor links
+======================================================= */
+html {
+    scroll-behavior: smooth;
+}
+
+/* =======================================================
+   Base Page Styling
+   Description: Sets global font, background color, and
+   default text color for the entire webpage.
+======================================================= */
+html,
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #eef1f7;
+    color: #2c2c2c;
+}
+
+/* =======================================================
+   Header Styling
+   Description: Keeps the header fixed at the top while
+   scrolling using sticky positioning.
+======================================================= */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    overflow: visible;
+}
+
+/* =======================================================
+   Navigation Bar Styling
+   Description: Handles layout, spacing, and alignment
+   of logo, navigation links, and login button.
+======================================================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background: rgb(163, 163, 251);
+    padding: 10px 20px;
+    height: 100px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+}
+
+/* =======================================================
+   Logo Styling
+   Description: Controls brand name typography.
+======================================================= */
+.logo {
+    font-size: 52px;
+    font-weight: 600;
+}
+
+/* =======================================================
+   Navigation Links Container
+   Description: Displays navigation items horizontally
+   using Flexbox with spacing between them.
+======================================================= */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* =======================================================
+   Navigation Link Styling
+   Description: Styles individual navigation anchors
+   with smooth hover transition effects.
+======================================================= */
+.nav-links a {
+    position: relative;
+    text-decoration: none;
+    font-weight: 400;
+    color: #333;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+}
+
+/* Underline Hover Animation Effect */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #3F51B5;
+    transition: width 0.3s ease;
+}
+
+/* Hover & Active State Color Change */
+.nav-links a:hover,
+.nav-links a.active {
+    color: #3F51B5;
+}
+
+/* Expands underline on hover */
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* =======================================================
+   Navigation Icons Styling
+   Description: Styles Font Awesome icons inside nav links.
+======================================================= */
+.nav-links a i {
+    color: #3F51B5;
+    font-size: 16px;
+    vertical-align: middle;
+    transition: transform 0.3s;
+}
+
+/* Icon Zoom Effect on Hover */
+.nav-links a:hover i {
+    transform: scale(1.2);
+}
+
+/* =======================================================
+   Login Button Styling
+   Description: Styles call-to-action login button with
+   hover shadow effect.
+======================================================= */
+.login-btn {
+    padding: 8px 18px;
+    background: #3F51B5;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 400;
+    position: relative;
+    z-index: 1100;
+}
+
+/* Login Button Hover Effect */
+.login-btn:hover {
+    box-shadow: 0 6px 14px rgba(63, 81, 181, 0.35);
+}
+
+/* =======================================================
+   Mobile Menu Toggle (Hidden by Default)
+   Description: Checkbox used for responsive hamburger menu.
+======================================================= */
+#menu-toggle {
+    display: none;
+}
+
+/* =======================================================
+   Hamburger Menu Icon Styling
+   Description: Three-line toggle icon for smaller screens.
+======================================================= */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+}
+
+/* Hamburger Lines */
+.menu-icon span {
+    width: 30px;
+    height: 3px;
+    background: #3F51B5;
+    border-radius: 2px;
+}
+
+/* =======================================================
+   Main Section Spacing
+   Description: Provides consistent padding and center
+   alignment for all primary content sections.
+======================================================= */
+.section {
+    padding: 80px 60px;
+    text-align: center;
+}
+
+/* =======================================================
+   Hero Section Styling
+   Description: Creates a modern split-layout hero section
+   with text on the left and image on the right.
+======================================================= */
+.hero {
+    display: flex;
+    /* Enables side-by-side layout */
+    align-items: center;
+    /* Vertically centers content */
+    justify-content: space-between;
+    /* Space between text and image */
+    gap: 40px;
+    /* Space between text and image */
+    padding: 50px 60px;
+    margin: 20px 30px;
+    background: linear-gradient(135deg, #F3F6FF, #EAF0FF);
+    border-radius: 20px;
+    border: 1px solid #dde2f0;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    /* Ensures text remains left aligned */
+}
+
+/* =======================================================
+   Hero Text Container
+   Description: Controls width and flex behavior of
+   textual content inside hero section.
+======================================================= */
+.hero-text {
+    flex: 1;
+    /* Occupies available space */
+    max-width: 550px;
+    /* Prevents excessive line stretching */
+}
+
+/* Hero Heading */
+.hero-text h1 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #1e2a4a;
+    margin-bottom: 10px;
+}
+
+/* Hero Description Paragraph */
+.hero-text p {
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+/* =======================================================
+   Hero Image Container
+   Description: Centers product image within its flex column.
+======================================================= */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    /* Horizontally center image */
+}
+
+/* Hero Image Styling */
+.hero-image img {
+    max-width: 100%;
+    /* Ensures responsiveness */
+    width: 450px;
+    /* Fixed desktop width */
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* =======================================================
+   Primary Button Styling
+   Description: Styles call-to-action buttons with
+   gradient background and hover animation.
+======================================================= */
+.btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #4f6df5, #6c83ff);
+    color: white;
+    text-decoration: none;
+    padding: 14px 34px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(79, 109, 245, 0.35);
+    transition: all 0.25s ease;
+}
+
+/* Button Hover Effect */
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 35px rgba(79, 109, 245, 0.45);
+}
+
+/* =======================================================
+   Features Section Styling
+   Description: Styles the main features container with
+   gradient background, spacing, and layout control.
+======================================================= */
+.features-section {
+
+    background: linear-gradient(135deg, #F3F6FF, #EAF0FF);
+    border-radius: 20px;
+    border: 1px solid #d9def0;
+    text-align: center;
+    padding: 50px 60px;
+    margin: 20px 30px;
+    max-width: 1200px;
+}
+
+/* =======================================================
+   Features Section Heading
+   Description: Styles the primary heading of the
+   features section.
+======================================================= */
+.features-section h2 {
+    font-size: 30px;
+    font-weight: 600;
+    color: #1e2a4a;
+    margin-bottom: 25px;
+    margin-top: 0px;
+}
+
+/* =======================================================
+   Features Container (Flex Layout)
+   Description: Arranges feature cards horizontally
+   with equal spacing using Flexbox.
+======================================================= */
+.features-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* =======================================================
+   Feature Card Styling
+   Description: Individual feature box with soft gradient,
+   hover animation, and responsive width handling.
+======================================================= */
+.feature-box {
+    padding: 26px 22px;
+    border-radius: 16px;
+    border: 1px solid #d8dff0;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
+    background: linear-gradient(135deg, #cfd8f3, #EAF0FF);
+    font-size: 17px;
+    font-weight: 500;
+    color: #2c2c2c;
+    transition: all 0.25s ease;
+    width: 100%;
+    max-width: 260px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Feature Card Hover Effect */
+.feature-box:hover {
+    transform: translateY(-6px);
+    border-color: #050a1f;
+    box-shadow: 0 20px 45px rgba(79, 110, 247, 0.25);
+}
+
+/* =======================================================
+   Feature Description Text
+   Description: Ensures proper text wrapping and alignment
+   within feature cards.
+======================================================= */
+.feature-box p {
+    width: 100%;
+    text-align: center;
+
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    line-height: 1.4;
+}
+
+/* =======================================================
+   Feature Title Styling
+   Description: Aligns icon and title text properly using
+   Flexbox for clean visual structure.
+======================================================= */
+.feature-box h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Centers icon and text */
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+    width: 100%;
+    text-align: center;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    line-height: 1.4;
+    gap: 6px;
+    /* Space between icon and text */
+}
+
+/* =======================================================
+   Feature Icon Styling
+   Description: Styles Font Awesome icons inside
+   feature titles with subtle animation.
+======================================================= */
+.feature-box h3 i {
+    color: #5C6FF0;
+    /* Icon color */
+    font-size: 22px;
+    /* Slightly larger for visibility */
+    transition: transform 0.3s;
+    flex-shrink: 0;
+}
+
+/* Icon Hover Animation */
+.feature-box:hover h3 i {
+    transform: scale(1.2);
+    /* Slight zoom effect */
+}
+
+/* =======================================================
+   Pricing Section Styling
+   Description: Defines layout, spacing, and background
+   styling for the pricing plans section.
+======================================================= */
+.pricing-section {
+    text-align: center;
+    padding: 30px 60px;
+    margin: 20px 30px;
+    background: linear-gradient(135deg, #F3F6FF, #EAF0FF);
+    border-radius: 20px;
+}
+
+/* =======================================================
+   Section Title Styling
+   Description: Styles main heading used in pricing section.
+======================================================= */
+.section-title {
+    margin-bottom: 10px;
+    margin-top: 0px;
+    font-size: 40px;
+    font-weight: 600;
+    color: #1e2a4a;
+}
+
+/* =======================================================
+   Section Subtitle Styling
+   Description: Styles supporting subtitle text below
+   main section heading.
+======================================================= */
+.section-subtitle {
+    color: #555;
+    margin-bottom: 18px;
+    font-size: 1.4rem;
+}
+
+/* =======================================================
+   Pricing Cards Container
+   Description: Uses Flexbox to align pricing cards
+   horizontally with responsive wrapping.
+======================================================= */
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* =======================================================
+   Individual Pricing Card Styling
+   Description: Defines structure, spacing, shadow,
+   and hover animation for pricing plans.
+======================================================= */
+.pricing-card {
+    width: 250px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    transition: transform 0.3s;
+}
+
+/* Pricing Card Hover Effect */
+.pricing-card:hover {
+    transform: translateY(-5px);
+}
+
+/* =======================================================
+   Highlighted (Popular) Plan Styling
+   Description: Adds visual emphasis to the most
+   recommended pricing plan.
+======================================================= */
+.pricing-card.popular {
+    border: 2px solid #3F51B5;
+}
+
+/* Popular Badge Styling */
+.badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #3F51B5;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+/* =======================================================
+   Product Image Styling
+   Description: Controls image dimensions and spacing
+   inside pricing cards.
+======================================================= */
+.laptop-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    height: 230px;
+}
+
+/* =======================================================
+   Plan Name Styling
+======================================================= */
+.plan-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* =======================================================
+   Price Styling
+   Description: Highlights pricing amount with brand color.
+======================================================= */
+.price {
+    font-size: 1.5rem;
+    color: #3F51B5;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* =======================================================
+   Tagline Styling
+   Description: Short descriptive text below price.
+======================================================= */
+.tagline {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* =======================================================
+   Buy Button Styling
+   Description: Call-to-action button for purchasing plans.
+======================================================= */
+.buy-btn {
+    background-color: #3F51B5;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Buy Button Hover Effect */
+.buy-btn:hover {
+    background-color: #5C6FF0;
+}
+
+/* =======================================================
+   Table Section Heading
+   Description: Styles the heading displayed above the
+   detailed features comparison table.
+======================================================= */
+.table-heading {
+    margin-top: 30px;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+/* =======================================================
+   Table Wrapper
+   Description: Enables horizontal scrolling on smaller
+   screens to maintain table responsiveness.
+======================================================= */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    /* Enables horizontal scroll */
+    -webkit-overflow-scrolling: touch;
+    /* Smooth scrolling on mobile devices */
+}
+
+/* =======================================================
+   Features Table Styling
+   Description: Defines structure, spacing, and visual
+   presentation of the product details table.
+======================================================= */
+.features-table {
+    width: 100%;
+    min-width: 700px;
+    /* Forces horizontal scroll on small screens */
+    border-collapse: collapse;
+    table-layout: fixed;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* =======================================================
+   Table Header Styling
+   Description: Styles the header row for better
+   visual distinction.
+======================================================= */
+.features-table thead {
+    background: #4f46e5;
+    color: #ffffff;
+}
+
+/* =======================================================
+   Table Cell Styling
+   Description: Controls padding, alignment, and
+   ensures safe text wrapping inside cells.
+======================================================= */
+.features-table th,
+.features-table td {
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 0.95rem;
+
+    /* Text Wrapping Safety */
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* =======================================================
+   Table Row Styling
+   Description: Adds row separation and hover effect
+   for improved readability.
+======================================================= */
+.features-table tbody tr {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* Row Hover Effect */
+.features-table tbody tr:hover {
+    background: #f9fafb;
+}
+
+/* =======================================================
+   Contact Section
+   Description: Main container styling for the contact
+   section including background, spacing, and layout.
+======================================================= */
+.contact-section {
+    background: linear-gradient(135deg, #F3F6FF, #EAF0FF);
+    padding: 30px 60px;
+    margin: 20px 30px;
+    border-radius: 24px;
+    text-align: center;
+}
+
+/* =======================================================
+   Contact Section Headings
+   Description: Styles for main title and subtitle text.
+======================================================= */
+.contact-title {
+    font-size: 42px;
+    font-weight: 600;
+    color: #1e2a4a;
+    margin-bottom: 12px;
+}
+
+.contact-subtitle {
+    font-size: 1.25rem;
+    color: #555;
+    max-width: 680px;
+    margin: 0 auto 25px;
+    line-height: 1.6;
+}
+
+/* =======================================================
+   Contact Card
+   Description: Card container holding the contact form.
+======================================================= */
+.contact-card {
+    max-width: 560px;
+    margin: auto;
+    background: #ffffff;
+    padding: 35px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+}
+
+/* =======================================================
+   Form Layout
+   Description: Controls structure of input rows and
+   spacing between form fields.
+======================================================= */
+.form-row {
+    display: flex;
+    gap: 16px;
+}
+
+/* Input & Textarea Styling */
+.contact-card input,
+.contact-card textarea {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 0.95rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Focus State for Better UX */
+.contact-card input:focus,
+.contact-card textarea:focus {
+    outline: none;
+    border-color: #3F51B5;
+}
+
+/* =======================================================
+   Submit Button Styling
+   Description: Styles primary action button inside
+   contact form.
+======================================================= */
+.contact-card button {
+    width: 100%;
+    background-color: #3F51B5;
+    color: #fff;
+    border: none;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+/* Button Hover Effect */
+.contact-card button:hover {
+    background-color: #5C6FF0;
+}
+
+/* =======================================================
+   Contact Information Section
+   Description: Displays additional contact details
+   below the form with visual separation.
+======================================================= */
+.contact-info {
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.contact-info p {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+/* =======================================================
+   Site Footer
+   Description: Main footer container styling including
+   layout, spacing, and typography.
+======================================================= */
+.site-footer {
+    text-align: center;
+    padding: 18px 12px;
+    background: linear-gradient(135deg, #F3F6FF, #EAF0FF);
+    color: #101010;
+    border-top: 1px solid #ddd;
+    font-weight: 600;
+    height: 70px;
+}
+
+/* =======================================================
+   Footer Text Styling
+   Description: Controls paragraph spacing and font size.
+======================================================= */
+.site-footer p {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+/* Highlighted Brand Name */
+.site-footer span {
+    color: #3F51B5;
+}
+
+/* =======================================================
+   Social Media Icons Container
+   Description: Aligns social media icons horizontally
+   with equal spacing.
+======================================================= */
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Social Media Icon Links */
+.footer-social a {
+    color: #3F51B5;
+    font-size: 18px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover Effect for Social Icons */
+.footer-social a:hover {
+    color: #1a237e;
+    transform: translateY(-3px);
+}
+
+/* Media Query for tablets and small laptops (screen width 1024px and below) */
+@media (max-width: 1024px) {
+
+    /* HERO SECTION */
+    .hero {
+        flex-direction: column;
+        /* Stack hero content vertically */
+        justify-content: flex-start;
+        /* Align content to top */
+        padding: 20px 30px;
+        /* Reduce padding for smaller screens */
+        gap: 10px;
+        /* Reduce space between elements */
+    }
+
+    /* BUTTON STYLING */
+    .btn {
+        padding: 10px 16px;
+        /* Smaller button padding */
+    }
+
+    /* HERO IMAGE */
+    .hero-image img {
+        width: 100%;
+        /* Make image responsive */
+        max-width: 280px;
+        /* Limit maximum size */
+        margin-bottom: 14px;
+        /* Space below image */
+    }
+
+    /* HERO TEXT HEADING */
+    .hero-text h1 {
+        font-size: 28px;
+        /* Reduce heading size */
+    }
+
+    /* HERO TEXT PARAGRAPH */
+    .hero-text p {
+        font-size: 16px;
+        /* Adjust paragraph size */
+    }
+
+    /* FEATURES SECTION CONTAINER */
+    .features-container {
+        flex-wrap: wrap;
+        /* Allow items to wrap to next line */
+        justify-content: center;
+        /* Center align feature boxes */
+        gap: 20px;
+        /* Space between feature boxes */
+    }
+
+    /* INDIVIDUAL FEATURE BOX */
+    .feature-box {
+        width: 45%;
+        /* Two boxes per row */
+        margin-bottom: 20px;
+        /* Space below each box */
+    }
+
+    /* LOGIN BUTTON */
+    .login-btn {
+        margin-left: auto;
+        /* Push login button to right */
+    }
+
+    /* PRICING SECTION */
+    .pricing-section {
+        padding: 30px 30px;
+        /* Adjust inner spacing */
+        margin: 15px 20px;
+        /* Adjust outer spacing */
+    }
+
+    /* PRICING SECTION TITLE */
+    .section-title {
+        font-size: 32px;
+        /* Slightly smaller title */
+    }
+
+    /* PRICING SECTION SUBTITLE */
+    .section-subtitle {
+        font-size: 1.2rem;
+        /* Adjust subtitle size */
+    }
+
+    /* PRICING CARD */
+    .pricing-card {
+        width: 220px;
+        /* Reduce card width */
+    }
+
+    /* LAPTOP IMAGE */
+    .laptop-image {
+        height: 200px;
+        /* Reduce image height */
+    }
+
+    /* CONTACT SECTION */
+    .contact-section {
+        padding: 30px 40px;
+        /* Adjust padding */
+        margin: 15px 20px;
+        /* Adjust margin */
+    }
+
+    /* CONTACT TITLE */
+    .contact-title {
+        font-size: 34px;
+        /* Adjust heading size */
+    }
+
+    /* CONTACT SUBTITLE */
+    .contact-subtitle {
+        font-size: 1.1rem;
+        /* Adjust subtitle size */
+    }
+
+    /* CONTACT CARD */
+    .contact-card {
+        padding: 30px;
+        /* Adjust card padding */
+    }
+
+    /* FOOTER SECTION */
+    .site-footer {
+        height: 65px;
+        /* Reduce footer height */
+    }
+
+    /* FOOTER TEXT */
+    .site-footer p {
+        font-size: 14px;
+        /* Smaller footer text */
+    }
+
+    /* FOOTER SOCIAL ICONS */
+    .footer-social a {
+        font-size: 17px;
+        /* Adjust icon size */
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+
+    /* Slightly reduce logo */
+    .logo {
+        font-size: 42px;
+    }
+
+    /* Reduce spacing + allow shrink */
+    .nav-links {
+        gap: 16px;
+        font-size: 17px;
+        flex: 1;
+        justify-content: center;
+    }
+
+    /* Prevent login from pushing layout */
+    .login-btn {
+        font-size: 16px;
+        padding: 6px 14px;
+        white-space: nowrap;
+    }
+
+}
+
+/* =======================================================
+   Responsive Design - Tablets & Mobile Devices
+   Breakpoint: 768px and below
+   Description: Optimizes navigation, hero, features,
+   pricing, table, contact, and footer sections
+   for smaller screen sizes.
+======================================================= */
+@media (max-width: 768px) {
+
+    /* ===================================================
+       Mobile Navigation Menu
+    =================================================== */
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        /* Positions below navbar */
+        right: 0;
+        background: rgb(163, 163, 251);
+        width: 130px;
+        display: none;
+        flex-direction: column;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        z-index: 900;
+
+        padding: 20px 0;
+        /* Vertical spacing */
+        gap: 20px;
+        /* Equal spacing between items */
+    }
+
+    /* Show menu when toggle checkbox is checked */
+    #menu-toggle:checked+.menu-icon+.nav-links {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: flex;
+        order: 2;
+        margin-left: auto;
+        z-index: 1050;
+    }
+
+    .login-btn {
+        max-width: 130px;
+        font-size: 14px;
+        padding: 5px 10px;
+        text-align: center;
+        margin: 8px auto;
+        order: 4;
+        display: inline-block;
+    }
+
+    .nav-links li {
+        text-align: center;
+    }
+
+    .nav-links li a {
+        padding: 0;
+    }
+
+    /* ===================================================
+       Navbar Behavior
+    =================================================== */
+    .navbar {
+        height: 70px;
+        padding: 10px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgb(163, 163, 251);
+    }
+
+    /* ===================================================
+       Hero Section Adjustments
+    =================================================== */
+    .hero {
+        text-align: center;
+        padding: 10px 12px;
+        margin: 10px 5px;
+    }
+
+    .hero-text h1 {
+        font-size: 24px;
+        line-height: 1.3;
+    }
+
+    .hero-text p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    /* ===================================================
+       Features Section Adjustments
+    =================================================== */
+    .features-section {
+        padding: 10px 12px;
+        margin: 10px 5px;
+    }
+
+    .table-heading {
+        margin-top: 4px;
+        margin-bottom: 15px;
+    }
+
+    .features-container {
+        flex-direction: column;
+        gap: 2px;
+        align-items: center;
+    }
+
+    .feature-box {
+        width: 300px;
+        padding: 18px;
+    }
+
+    /* ===================================================
+       Pricing Section Adjustments
+    =================================================== */
+    .pricing-section {
+        padding: 25px 15px;
+        margin: 10px;
+    }
+
+    .section-title {
+        font-size: 25px;
+    }
+
+    .section-subtitle {
+        font-size: 1.3rem;
+        margin-bottom: 18px;
+    }
+
+    .pricing-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pricing-card {
+        width: 90%;
+        max-width: 320px;
+    }
+
+    .laptop-image {
+        height: auto;
+        max-height: 200px;
+        object-fit: contain;
+    }
+
+    .plan-name {
+        font-size: 1.1rem;
+    }
+
+    .price {
+        font-size: 1.3rem;
+    }
+
+    .tagline {
+        font-size: 0.9rem;
+    }
+
+    .buy-btn {
+        width: 100%;
+    }
+
+    /* ===================================================
+       Features Table Adjustments
+    =================================================== */
+    .table-heading {
+        font-size: 1.4rem;
+    }
+
+    .features-table th,
+    .features-table td {
+        font-size: 0.85rem;
+        padding: 10px;
+    }
+
+    /* ===================================================
+       Contact Section Adjustments
+    =================================================== */
+    .contact-section {
+        padding: 25px 15px;
+        margin: 10px;
+        border-radius: 18px;
+    }
+
+    .contact-title {
+        font-size: 26px;
+    }
+
+    .contact-subtitle {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .contact-card {
+        padding: 22px 18px;
+        border-radius: 16px;
+    }
+
+    /* Stack Full Name and Email Fields */
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .contact-card input,
+    .contact-card textarea {
+        padding: 12px 14px;
+        font-size: 0.9rem;
+    }
+
+    .contact-card button {
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+
+    /* ===================================================
+       Footer Adjustments
+    =================================================== */
+    .site-footer {
+        height: 60px;
+    }
+
+    .site-footer p {
+        font-size: 13px;
+    }
+
+    .footer-social a {
+        font-size: 16px;
+    }
+}
+
+/* =======================================================
+   Responsive Design - Small Devices
+   Breakpoint: 400px and below
+   Description: Further refines spacing, typography,
+   and layout for compact mobile screens.
+======================================================= */
+@media (max-width: 400px) {
+
+    /* ===================================================
+       Pricing Section Adjustments
+    =================================================== */
+    .pricing-section {
+        padding: 20px 10px;
+        margin: 8px;
+    }
+
+    .section-title {
+        font-size: 27px;
+    }
+
+    .pricing-card {
+        width: 100%;
+    }
+
+    /* ===================================================
+       Contact Section Adjustments
+    =================================================== */
+    .contact-section {
+        padding: 20px 12px;
+        margin: 8px;
+    }
+
+    .contact-title {
+        font-size: 22px;
+    }
+
+    .contact-card {
+        padding: 18px 15px;
+    }
+
+    /* ===================================================
+       Footer Adjustments
+    =================================================== */
+    .site-footer {
+        height: 45px;
+    }
+
+    .site-footer p {
+        font-size: 12px;
+    }
+
+    .footer-social a {
+        font-size: 14px;
+    }
+}
+
+/* =======================================================
+   Responsive Design - Small Phones
+   Breakpoint: 360px and below
+   Description: Adjusts feature box width to maintain
+   proper layout and readability on very small devices.
+======================================================= */
+@media (max-width: 360px) {
+
+    .feature-box {
+        width: 300px;
+    }
+
+}
+
+/* =======================================================
+   Responsive Design - Extra Small Devices
+   Breakpoint: 320px and below
+   Description: Adjusts logo typography for very small
+   screen devices to maintain readability and branding.
+======================================================= */
+@media (max-width: 320px) {
+    .logo {
+        font-size: 42px;
+        font-weight: 600;
+    }
+}
