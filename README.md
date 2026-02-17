@@ -47,4 +47,3 @@ Open index.html in your preferred browser.
 
 You can view the live project here:  
 - 🔗 [GitHub Pages](https://shraddha-dasgude-611.github.io/Nova_X_Landing_Page/)  
-- 🔗 [Netlify Deployment](https://novax-landing-page.netlify.app/)
